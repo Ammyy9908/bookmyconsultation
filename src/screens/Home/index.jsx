@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../commons/Header";
 import TabPanel from "../../commons/Tab";
 import "./index.css";
 import DoctorCard from "../../commons/DoctorCard";
+import AuthModal from "../../commons/AuthModal";
 
 function HomePage() {
+  const [open, setOpen] = useState(false);
   return (
     <div style={{ width: "100%" }}>
-      <Header />
+      <Header setOpen={setOpen} />
       <div className="container">
         <div className="flex items-center justify-center">
           <TabPanel />
@@ -28,6 +30,7 @@ function HomePage() {
           <DoctorCard />
         </div>
       </div>
+      <AuthModal open={open} setOpen={setOpen} />
     </div>
   );
 }

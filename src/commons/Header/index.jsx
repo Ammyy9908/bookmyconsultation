@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function Header() {
+export default function Header({ setOpen }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -24,7 +24,13 @@ export default function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} ml={2}>
             Doctor Finder
           </Typography>
-          <Button color="inherit" style={{ backgroundColor: "#ff7f7f" }}>
+          <Button
+            color="inherit"
+            style={{ backgroundColor: "#ff7f7f" }}
+            onClick={() => {
+              setOpen(true);
+            }}
+          >
             Login
           </Button>
         </Toolbar>
